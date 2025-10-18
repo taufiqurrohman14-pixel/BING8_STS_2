@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ujian English Class – SMPN 1 Klangenan</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #eaf3ff;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .warning {
+      color: red;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+    .btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .app-image {
+      width: 180px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <img src="assets/logo.png" alt="Logo English Class SMPN 1 Klangenan" class="logo">
+  <h1>Ujian English Class</h1>
+
+  <p>
+    Mohon pastikan Anda membuka halaman ini melalui aplikasi <strong>Exambro E-ujian.id</strong> 
+    <br>
+    <em>yang diinstall dari Google Play seperti gambar di bawah ini.</em>
+  </p>
+
+  <img src="assets/exambro-playstore.png" alt="Aplikasi Exambro dari Google Play" class="app-image">
+
+  <div class="warning" id="warning"></div>
+  <div class="info" id="info"></div>
+
+  <button class="btn" id="startBtn" style="display:none;" onclick="window.location.href='https://forms.gle/DoLUjnBoWWgxv69y9'">Mulai Ujian</button>
+
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.includes("exambro")) {
+      document.getElementById("startBtn").style.display = "inline-block";
+    } else {
+      document.getElementById("warning").innerText = "⚠️ Anda tidak menggunakan aplikasi Exambro.";
+      document.getElementById("info").innerText = "Silakan tutup halaman ini dan buka kembali melalui aplikasi Exambro E-ujian.id.";
+    }
+  </script>
+</body>
+</html>
